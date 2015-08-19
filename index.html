@@ -8,6 +8,30 @@
   <link rel="stylesheet" type="text/css" href="styles/main.css"> 
 </head>
 <body>
+  <div id="list-of-trips"></div>
+  <div id="formDiv">
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1 location-name">Location</span>
+    <input type="text" class="form-control" id="location" placeholder="Istanbul" aria-describedby="basic-addon1">
+  </div>
+  
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1 location-type">Location Type</span>
+    <input type="text" class="form-control" id="location-type" placeholder="Location Type" aria-describedby="basic-addon1">
+  </div>  
+  
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Review</span>
+    <textarea type="text" class="form-control" id="review" placeholder="I loved my trip to..." aria-describedby="basic-addon1"></textarea>
+  </div>
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" id="visited" class="btn btn-default">Visited</button>
+    <button type="button" id="wish-list" class="btn btn-default">Wish List</button>
+  </div>
+  <div>
+    <button id="add-location">Add Location</button>
+  </div>
+</div>
   
 <script data-main="javascripts/main" src="lib/bower_components/requirejs/require.js"></script>
 </body>
