@@ -1,0 +1,21 @@
+{{#each this}}
+  {{#unless visited}}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{location}}</h3>
+      </div>
+      <div class="panel-body">
+        {{#each reviews}}
+          <div>
+            <span>{{title}}</span> | <span>{{date}}</span>
+          </div>
+        {{/each}}
+      </div>
+      <button class="btn btn-default" id="add-review#{{@key}}">Add Review</button>
+      <div class="review-container">
+        <textarea id="review-entry" class="review-entry"></textarea>
+        <button id="save-review" class="btn btn-default">Save Review</button>
+      </div>
+    </div>
+  {{/unless}}
+{{/each}}

@@ -1,4 +1,10 @@
 .review-container {
   display: none; }
 
+body {
+  background-color: black; }
+
+label {
+  color: white; }
+
 /*# sourceMappingURL=main.css.map */

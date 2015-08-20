@@ -8,6 +8,10 @@
   <link rel="stylesheet" type="text/css" href="styles/main.css"> 
 </head>
 <body>
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" id="visited" class="btn btn-default">Visited</button>
+    <button type="button" id="wish-list" class="btn btn-default">Wish List</button>
+  </div>
   <div id="list-of-trips"></div>
   <div id="formDiv">
   <div class="form-group">
@@ -24,17 +28,13 @@
     <label for="review">Review</label>
     <textarea type="text" class="form-control" id="review" placeholder="I loved my trip to..." aria-describedby="basic-addon1"></textarea>
   </div>
-  <div class="btn-group" role="group" aria-label="...">
-    <button type="button" id="visited" class="btn btn-default">Visited</button>
-    <button type="button" id="wish-list" class="btn btn-default">Wish List</button>
-  </div>
   <div>
-    <button id="add-location">Add Location</button>
+    <button id="add-location" class="btn btn-default">Add Location</button>
   </div>
 </div>
 <div class="review-container">
   <textarea class="review-entry"></textarea>
-  <button id="save-review">Save Review</button>
+  <button id="save-review" class="btn btn-default">Save Review</button>
 </div>
 <script data-main="javascripts/main" src="lib/bower_components/requirejs/require.js"></script>
 </body>

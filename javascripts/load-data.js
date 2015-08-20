@@ -28,5 +28,24 @@ define(function(require) {
     //Insert the DOM string into the appropriate element
     $("#list-of-trips").html(populatedTemplate);
 
+    
+
+  });
+  $(document).on("click", "#visited", function() {
+
+    myFirebaseRef.child("trips").on("value", function(snapshot) {
+      var trips = snapshot.val();
+      var populatedTemplate = templates.tripVisitedTpl(trips);
+      $("#list-of-trips").html(populatedTemplate);
+    });
+  });
+
+  $(document).on("click", "#wish-list", function() {
+
+    myFirebaseRef.child("trips").on("value", function(snapshot) {
+      var trips = snapshot.val();
+      var populatedTemplate = templates.tripWishTpl(trips);
+      $("#list-of-trips").html(populatedTemplate);
+    });
   });
 });
