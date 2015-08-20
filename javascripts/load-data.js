@@ -1,10 +1,20 @@
 define(function(require) {
   var firebase = require('firebase');
-  var $ = require('jquery');
   var templates = require('get-templates');
-  console.log(templates);
+  
   var myFirebaseRef = new Firebase("https://tripping.firebaseio.com/");
 
+  //Listen for when anything changes on the "trips" key
+  myFirebaseRef.child("location_types").on("value", function(snapshot) {
+    var location_types = snapshot.val();
+  
+    console.log("location_types", location_types);
+ 
+
+    var populatedTemplate = templates.locTypeTpl(location_types);
+
+    $("#location-type").html(populatedTemplate);
+  });
   //Listen for when anything changes on the "trips" key
   myFirebaseRef.child("trips").on("value", function(snapshot) {
     var trips = snapshot.val();
@@ -13,6 +23,7 @@ define(function(require) {
 
     //This will hold the complete DOM string of trips
     var populatedTemplate = templates.tripTpl(trips);
+    
 
     //Insert the DOM string into the appropriate element
     $("#list-of-trips").html(populatedTemplate);

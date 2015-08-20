@@ -17,17 +17,16 @@ define(function(require) {
 
   // POST the data to Firebase when Add Location
   // button is clicked
-  var newLocation = {
-    location: $("#location").val(),
-    location_type: $("#location-type").val(),
-    visited: visited
-  };
-
   $("#add-location").click(function() {
     var newLocation = {
       location: $("#location").val(),
       location_type: $("#location-type").val(),
-      visited: visited
+      visited: visited,
+      reviews: {
+        date: $("").val(),
+        text: $("").val(),
+        title: $("").val()
+      }
     };
     $.ajax({
       url: "https://tripping.firebaseio.com/trips.json",
